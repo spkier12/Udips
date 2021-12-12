@@ -20,6 +20,10 @@ async function login() {
     // Set token to localstorage
     localStorage.setItem("udips", jsdata2.Data)
     localStorage.setItem("udips_email", email)
+
+    if (jsdata2.Message ==  "Login OK") {
+        location.href = "./index.html"
+    }
 }
 
 async function closewarning() {
@@ -29,7 +33,6 @@ async function closewarning() {
 async function register() {
     let email = document.getElementById("email").value
     let pass = document.getElementById("pass").value
-
     let data = await fetch(http0+`Create/${email}/${pass}`)
     let body = await data.text()
     if (body == "-") {

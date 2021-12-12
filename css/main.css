@@ -31,13 +31,25 @@
 
     /* start of right div */
     .dashboard {
-        overflow: auto;
+        overflow: none;
         display: block;
         width: 59.2%;
         height: 99%;
         border-style: solid;
         border-color: black;
 
+        border-radius: 0.8ch;
+        margin-left: 0.2%;
+        margin-top: 0.2%;
+    }
+
+    .dashboard2 {
+        overflow: auto;
+        display: block;
+        width: 90%;
+        height: 60%;
+        border-style: none;
+        border-color: black;
         border-radius: 0.8ch;
         margin-left: 0.2%;
         margin-top: 0.2%;
@@ -58,7 +70,7 @@
         height: 20%;
         height: fit-content;
         border-color: black;
-        border-style: solid;
+        border-style:none;
         border-radius: 0.5ch;
         margin-left: 0.1%;
         text-align: center;
@@ -66,7 +78,7 @@
     }
 
     .table {
-        width: 99%;
+        width: 90%;
         margin-top: 1%;
     }
 

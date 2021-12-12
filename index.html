@@ -13,17 +13,19 @@
                 <a class="a" href="#">Hjem</a>
                 <a class="a" href="#">Profil</a>
                 <a class="a" href="#">Admin</a>
-                <a class="a" href="#">Logut</a>
+                <a class="a" href="login.html">Logut</a>
             </div>
 
             <!-- Start of center div  -->
-            <div class="Centercollumn unicolor">
-                asd
+            <div class="Centercollumn unicolor" id="Centercollumn">
+                Loading webpage....
             </div>
 
 
         <!-- start of right div -->
-            <div class="dashboard unicolor" id="dashboard"></div>
+            <div class="dashboard unicolor" id="dashboard">
+                Loading webpage....
+            </div>
     </center>
 </body>
 
@@ -31,4 +33,48 @@
     fetch("indexdashboard.html").then(async(datamenu) => {
         document.getElementById("dashboard").innerHTML = await datamenu.text()
     })
+
+    fetch("indexCentercollumn.html").then(async(datamenu) => {
+        document.getElementById("Centercollumn").innerHTML = await datamenu.text()
+    })   
+
+    async function checkrole() {
+        let email = document.getElementById("userroleemailcheck").value
+        let role = document.getElementById("rolecheckname").value
+
+        let data = await fetch(http0+`Checkrole/${role}/${email}`)
+        let body = await data.text()
+        let jsdata = JSON.parse(body)
+        let jsdata2 = JSON.parse(jsdata)
+
+        document.getElementById("warningmessage").style.display = "block"
+        document.getElementById("warningmessage").innerText = jsdata2.Message
+    }
+
+    async function inviterole() {
+        let email = document.getElementById("inviteemail").value
+        let role = document.getElementById("inviteemailrole").value
+
+        let data = await fetch(http0+`Inviterole/${role}/${email}/${localStorage.getItem("udips")}`)
+        let body = await data.text()
+        let jsdata = JSON.parse(body)
+        let jsdata2 = JSON.parse(jsdata)
+
+        document.getElementById("warningmessage").style.display = "block"
+        document.getElementById("warningmessage").innerText = jsdata2.Message
+    }
+
+        async function createrole() {
+        let role = document.getElementById("rollenavn").value
+
+        let data = await fetch(http0+`Createrole/${role}/${localStorage.getItem("udips")}`)
+        let body = await data.text()
+        let jsdata = JSON.parse(body)
+        let jsdata2 = JSON.parse(jsdata)
+
+        document.getElementById("warningmessage").style.display = "block"
+        document.getElementById("warningmessage").innerText = jsdata2.Message
+    }
+
 </script>
+
