@@ -1,10 +1,10 @@
 
     .unicolor {
-        background-color: rgb(139, 139, 139);
+        background-color: rgb(173, 173, 173);
     }
 
     .bigwindow {
-        background-color: rgb(48, 48, 48);
+        background-color: rgb(83, 83, 83);
         overflow: none;
         display: flex;
         width: 100%;
@@ -83,4 +83,19 @@
     }
 
     /* End of right div */
+    .inputindex {
+        width: 95%;
+        margin-top: 1%;
+    }
 
+    p {
+        color: white;
+    }
+
+    h1 {
+        color: white;
+    }
+
+    button {
+        width: 95%;
+    }

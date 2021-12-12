@@ -30,6 +30,7 @@
 </body>
 
 <script>
+
     fetch("indexdashboard.html").then(async(datamenu) => {
         document.getElementById("dashboard").innerHTML = await datamenu.text()
     })
@@ -37,6 +38,7 @@
     fetch("indexCentercollumn.html").then(async(datamenu) => {
         document.getElementById("Centercollumn").innerHTML = await datamenu.text()
     })   
+
 
     async function checkrole() {
         let email = document.getElementById("userroleemailcheck").value

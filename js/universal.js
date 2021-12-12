@@ -1,4 +1,4 @@
-let http0 = "http://80.208.226.78:5001/"
+let http0 = "https://api.ulrik.live:4001/"
 
 // Check if token is valid if not return to login page
 validate()
