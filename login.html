@@ -4,13 +4,15 @@
 
 <body class="body">
     <center>
-        <div class="loginbox">
+        <div class="loginbox" id="loginbox">
             <br>
-            <h3>Disp 17</h3>
-            <input type="email"  id="" class="input form-control" placeholder="Mail: eksempel@gmail.com">
-            <input type="text"  id="" class="input form-control" placeholder="2FA Google authenticator code">
-            <input type="password"  id="" class="input form-control" placeholder="Ditt Passord">
-            <button class="btn btn-primary">Login</button>
+            <h3 style="color: rgb(0, 0, 0);">uDips 2.0</h3>
+            <p class="alert alert-danger" id="warningmessage">Ingen varslinger ennda</p>
+            <input type="email"  id="email" class="input form-control" placeholder="Mail: eksempel@gmail.com">
+            <input type="text"  id="auth" class="input form-control" placeholder="2FA Google authenticator code">
+            <input type="password"  id="pass" class="input form-control" placeholder="Ditt Passord">
+            <button class="btn btn-dark" onclick="login()">Login</button>
+            <button class="btn btn-dark" onclick="register()">Registrer</button>
             <br>
             <br>
             <br>
@@ -18,26 +20,39 @@
     </center>
 </body>
 
-
-<script>
-
-</script>
+<script src="../js/universal.js"></script>
+<script src="../js/login.js"></script>
 
 <style>
     .body {
-        /* background-color: rgb(19, 19, 19); */
-        background-image: url("../images/medical-5459633.png");
+        background-color: rgb(63, 63, 63);
+        /* background-image: url("../images/medical-5459633.png");
         background-position: center;
         background-size: cover;
-        background-repeat: no-repeat;
+        background-repeat: no-repeat; */
+    }
+
+    #warningmessage {
+        display: none;
     }
 
     .loginbox {
-        background-color: rgba(216, 216, 216, 0.692);
+        background-color: rgb(255, 255, 255);
+
         width: 30%;
         height: fit-content;
-        border-radius: 0ch;
+        border-radius: 3ch;
         display: block;
+        margin-top: 10%;
+        justify-content: center;
+    }
+
+    .mfa {
+        background-color: rgb(255, 255, 255);
+        width: 30%;
+        height: fit-content;
+        border-radius: 3ch;
+        display:none;
         margin-top: 10%;
         justify-content: center;
     }
@@ -47,7 +62,7 @@
         margin-top: 5%;
         width: 60%;
         background-color: rgba(26, 26, 26, 0);
-        color: white;
+        color: black;
         border-top: rgba(238, 130, 238, 0);
         border-left: rgba(238, 130, 238, 0);
         border-right: rgba(238, 130, 238, 0);
@@ -71,9 +86,11 @@
         box-shadow: none;
     }
 
-    button {
+    .btn {
+        display: block;
+        background-color: rgb(179, 41, 41);
+        border-style: none;
+        margin-top: 1%;
         width: 60%;
-        margin-top: 5%;
-        border-radius: 0%;
     }
 </style>
