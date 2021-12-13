@@ -8,10 +8,14 @@ async function login() {
         auth = "mfanotenabled"
     }
 
-    let data = await fetch(http0+`Login/${email}/${auth}/${pass}`)
+    let data = await fetch(http0+`Login/${email}/${auth}/${pass}`, {
+        method: 'GET',
+        credentials: 'include'
+    })
     let body = await data.text()
     let jsdata = JSON.parse(body)
     let jsdata2 = JSON.parse(jsdata)
+
 
     document.getElementById("warningmessage").style.display = "block"
     document.getElementById("warningmessage").innerText = jsdata2.Message
@@ -22,7 +26,7 @@ async function login() {
     localStorage.setItem("udips_email", email)
 
     if (jsdata2.Message ==  "Login OK") {
-        location.href = "./index.html"
+        // location.href = "./index.html"
     }
 }
 
