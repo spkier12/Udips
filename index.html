@@ -44,7 +44,10 @@
         let email = document.getElementById("userroleemailcheck").value
         let role = document.getElementById("rolecheckname").value
 
-        let data = await fetch(http0+`Checkrole/${role}/${email}`)
+        let data = await fetch(http0+`Checkrole/${role}/${email}`, {
+            method: 'GET',
+            credentials: 'include'
+        })
         let body = await data.text()
         let jsdata = JSON.parse(body)
         let jsdata2 = JSON.parse(jsdata)
@@ -57,7 +60,10 @@
         let email = document.getElementById("inviteemail").value
         let role = document.getElementById("inviteemailrole").value
 
-        let data = await fetch(http0+`Inviterole/${role}/${email}/${localStorage.getItem("udips")}`)
+        let data = await fetch(http0+`Inviterole/${role}/${email}`, {
+            method: 'GET',
+            credentials: 'include'
+        })
         let body = await data.text()
         let jsdata = JSON.parse(body)
         let jsdata2 = JSON.parse(jsdata)
@@ -69,7 +75,10 @@
         async function createrole() {
         let role = document.getElementById("rollenavn").value
 
-        let data = await fetch(http0+`Createrole/${role}/${localStorage.getItem("udips")}`)
+        let data = await fetch(http0+`Createrole/${role}`, {
+            method: 'GET',
+            credentials: 'include'
+        })
         let body = await data.text()
         let jsdata = JSON.parse(body)
         let jsdata2 = JSON.parse(jsdata)

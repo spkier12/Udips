@@ -26,7 +26,7 @@ async function login() {
     localStorage.setItem("udips_email", email)
 
     if (jsdata2.Message ==  "Login OK") {
-        // location.href = "./index.html"
+        location.href = "./index.html"
     }
 }
 

@@ -15,11 +15,11 @@ async function validate() {
         console.log(dataparse2)
         if (dataparse2.Data == "") {
             document.getElementById("warningmessage").innerText = "Du har blitt logget ut\npga sikkerhet login igjen om 5 sekunder!"
-            // location.href = "./login.html"
+            location.href = "./login.html"
         }
     } catch {
             document.getElementById("warningmessage").innerText = "Du har blitt logget ut\npga sikkerhet login igjen om 5 sekunder!"
-            // location.href = "./login.html"
+            location.href = "./login.html"
     }
     
 }
